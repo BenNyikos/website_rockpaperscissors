@@ -18,13 +18,10 @@ function game(){
     }
 }
 
-  
-
 function playRound(playerSelection) {
   playerSelection = playerSelection.toLowerCase();
   playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
   computerSelection = computerPlay();
-
   if (playerSelection == computerSelection){
     console.log(`${playerSelection} against ${computerSelection}! It's a draw!`)
   }
