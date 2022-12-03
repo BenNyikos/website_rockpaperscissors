@@ -1,19 +1,22 @@
+console.log("You will be playing 5 rounds of Rock, Paper, Scissors")
 game();
 
 function game(){
-  let userInputValid;
   let userInput;
     for (let i = 0; i < 5;) {
       userInput = prompt(`#${i+1} Game - Type in your choice(rock, paper, or scissors): `)
-      userInput = userInput.toLowerCase()
-      if (userInput == "rock" || userInput == "paper" || userInput == "scissors"){
-        userInputValid = true
-        console.log(playRound(userInput))
-        i++
+      if(userInput){
+        if (userInput == "rock" || userInput == "paper" || userInput == "scissors"){
+          console.log(playRound(userInput))
+          i++
+        }
+        else {
+          console.log("Invalid input")
+        }
       }
       else {
-        userInputValid = false
-        console.log("Invalid input")
+        console.log("You are leaving the game")
+        return;
       }
     }
 }
@@ -35,7 +38,7 @@ function playRound(playerSelection) {
 
 function computerPlay(){
   let computerHand = "";
-  let random = Math.floor(Math.random()*3);
+  const random = Math.floor(Math.random()*3);
   if (random == 0) {
     computerHand = "Rock"
   }
