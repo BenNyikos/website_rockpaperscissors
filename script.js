@@ -3,23 +3,17 @@ game();
 
 function game(){
   let userInput;
-    for (let i = 0; i < 5;) {
-      userInput = prompt(`#${i+1} Game - Type in your choice(rock, paper, or scissors): `)
+    for (let i = 0; i < 5; i++) {
+      userInput = prompt(`#${i+1} Game - Type in your choice(rock, paper, or scissors): `).toLowerCase();
       userInput = userInput.trim();
-      if(userInput){
         if (userInput == "rock" || userInput == "paper" || userInput == "scissors"){
           console.log(playRound(userInput))
-          i++
         }
         else {
           console.log("Invalid input")
+          i--
         }
-      }
-      else {
-        console.log("You are leaving the game!")
-        return;
-      }
-    }
+  }
 }
 
 function playRound(playerSelection) {
