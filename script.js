@@ -5,6 +5,7 @@ function game(){
   let userInput;
     for (let i = 0; i < 5;) {
       userInput = prompt(`#${i+1} Game - Type in your choice(rock, paper, or scissors): `)
+      userInput = userInput.trim();
       if(userInput){
         if (userInput == "rock" || userInput == "paper" || userInput == "scissors"){
           console.log(playRound(userInput))
@@ -15,7 +16,7 @@ function game(){
         }
       }
       else {
-        console.log("You are leaving the game")
+        console.log("You are leaving the game!")
         return;
       }
     }
